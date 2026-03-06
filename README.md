@@ -87,5 +87,134 @@ A full-stack social media platform with real-time messaging, friend requests, an
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/dnaveen189/social-media-dashboard.git
-cd social-media-dashboard
+git clone https://github.com/dnaveen189/Social_Media_Dashboard.git
+cd Social_Media_Dashboard
+```
+
+### 2. Setup Backend
+
+```bash
+cd server
+npm install
+```
+
+Create a `.env` file in the `server` directory:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+```
+
+Start the backend server:
+
+```bash
+npm run dev
+```
+
+### 3. Setup Frontend
+
+Open a new terminal and navigate to the client directory:
+
+```bash
+cd client
+npm install
+```
+
+Create a `.env` file in the `client` directory:
+
+```env
+VITE_API_URL=http://localhost:5000
+VITE_SOCKET_URL=http://localhost:5000
+```
+
+Start the frontend development server:
+
+```bash
+npm run dev
+```
+
+### 4. Access the Application
+
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:5000
+
+## 📁 Project Structure
+
+```
+Social_Media_Dashboard/
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── components/     # Reusable components
+│   │   ├── pages/         # Page components
+│   │   ├── store/         # Redux store
+│   │   └── ...
+│   ├── package.json
+│   └── vite.config.js
+├── server/                 # Node.js backend
+│   ├── controllers/       # Route controllers
+│   ├── middleware/        # Custom middleware
+│   ├── models/            # Mongoose models
+│   ├── routes/            # API routes
+│   ├── services/          # Business logic
+│   ├── server.js          # Entry point
+│   └── package.json
+├── backup/                # Backup files
+└── README.md
+```
+
+## 🔌 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+- `GET /api/auth/me` - Get current user
+
+### Posts
+- `GET /api/posts` - Get all posts
+- `POST /api/posts` - Create post
+- `DELETE /api/posts/:id` - Delete post
+- `PUT /api/posts/:id/like` - Like/unlike post
+
+### Users
+- `GET /api/users/:id` - Get user profile
+- `PUT /api/users/profile` - Update profile
+- `GET /api/users/search` - Search users
+
+### Friends
+- `POST /api/friends/request` - Send friend request
+- `PUT /api/friends/accept` - Accept friend request
+- `DELETE /api/friends/:id` - Remove friend
+
+### Messages
+- `GET /api/messages/:userId` - Get conversation
+- `POST /api/messages` - Send message
+
+### Analytics
+- `GET /api/analytics/posts` - Post analytics
+- `GET /api/analytics/engagement` - Engagement metrics
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 👤 Author
+
+- GitHub: [dnaveen189](https://github.com/dnaveen189)
+
+## 🙏 Acknowledgments
+
+- Thanks to all contributors
+- Inspired by various social media platforms
+
